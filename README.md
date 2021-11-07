@@ -13,14 +13,14 @@ MLP, Xgboost, Catboost and LightGBM classifiers were trained and a final VotingC
 ### 4-Model Training
 ### 5-Model Training
 ## Dataset
-The dataset provided in this project is obtained from [UC Irvine Machine Learning Repository - Dry Bean Dataset.](https://archive.ics.uci.edu/ml/datasets/Dry+Bean+Dataset)\
+The dataset provided in this project is obtained from [UC Irvine Machine Learning Repository - Dry Bean Dataset.](https://archive.ics.uci.edu/ml/datasets/Dry+Bean+Dataset)
 - **Note**: The data is already splitted with 80% - 20% ratio to training and testing sets respectively, so a part of the data is already separated for final testing and will use the training set for train and validation.
 
 ## EDA
-- Exploring the dataset, getting summary statistics and checking for no null values and duplicates.\
+- Exploring the dataset, getting summary statistics and checking for null values and duplicates and there weren't any.
 - Graphical representations:\
 1- Count plot the labels column show the distribution of all classes that showed a slight imbalance but it doesn't affect and no need to handle.\
-2- Histogram of numerical features, some distributions have long tails, skewed and most are bi-modal which means that some bean classes should be quite distinct from others.\ 
+2- Histogram of numerical features, some distributions have long tails, skewed and most are bi-modal which means that some bean classes should be quite distinct from others. 
 3- Boxplot shows that the "Bombay" & "Horoz" classes are distinct from other classes and that there are some minimal outliers in some features.\
 4- The Pearson linear correlation shows that there are lots of highly correlated features.
 
@@ -32,8 +32,8 @@ Now, we have the training set:\
 4- Feature scaling using StadardScalar()
 
 ## Model Training
-SVC, MLP, Xgboost, Catboost and LightGBM classifiers were trained on the dataset separately.\
-- RandomizedSearchCV was used previously in hyperparameter optimization for the models and the best parameters are used directly in this code.\
+SVC, MLP, Xgboost, Catboost and LightGBM classifiers were trained on the dataset separately.
+- RandomizedSearchCV was used previously in hyperparameter optimization for the models and the best parameters are used directly in this code.
 - F1-score and Confusion Matrix  are used to evaluate each model's performance.\
 \
 Finally, Voting classifier with 'soft' voting is used with the four best models; MLP, Xgboost, Catboost and LightGBM. 
